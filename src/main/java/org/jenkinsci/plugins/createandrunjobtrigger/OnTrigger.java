@@ -26,7 +26,7 @@ import jenkins.model.Jenkins;
 
 public class OnTrigger implements Runnable {
 	static final Logger log =  Logger.getLogger(OnTrigger.class.getName());
-	final String jobName = "continuous";
+	final String jobName;
 	private final String gitUrl;
 	private final String organisation;
 	private final String repo;
@@ -37,6 +37,8 @@ public class OnTrigger implements Runnable {
 		if(tokens.length < 3) throw new IllegalArgumentException(gitUrl + " invalid");
 		organisation = tokens[tokens.length-2];
 		repo = stripGit(tokens[tokens.length-1]);
+                jobName = repo + "-master";
+                
 	}
 
 	String stripGit(String repo) {
