@@ -18,6 +18,7 @@ import hudson.model.Item;
 import hudson.model.Job;
 import hudson.model.Queue;
 import hudson.model.TopLevelItem;
+import hudson.model.Queue.Executable;
 import hudson.plugins.git.GitSCM;
 import hudson.plugins.git.UserRemoteConfig;
 import hudson.plugins.git.browser.GitWeb;
@@ -37,7 +38,7 @@ public class OnTrigger implements Runnable {
 		if(tokens.length < 3) throw new IllegalArgumentException(gitUrl + " invalid");
 		organisation = tokens[tokens.length-2];
 		repo = stripGit(tokens[tokens.length-1]);
-                jobName = repo + "-master";
+		jobName = repo;
                 
 	}
 
@@ -60,7 +61,7 @@ public class OnTrigger implements Runnable {
 	Job<?,?> getOrCreateJob() throws IllegalArgumentException, IOException {
 		Folder repoFolder =  getOrCreateFolder(getOrCreateFolder(jenkins(), organisation), repo);
 		TopLevelItem jobItem = repoFolder.getItem(jobName);
-		return jobItem == null ? createJob(repoFolder) : assignBuildNumber(asJob(jobItem));
+		return  assignBuildNumber(jobItem == null ? createJob(repoFolder) : asJob(jobItem));
 	}
 
 	private Job<?,?> assignBuildNumber(Job<?, ?> job) throws IOException {

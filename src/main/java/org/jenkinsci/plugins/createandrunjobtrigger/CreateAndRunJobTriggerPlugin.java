@@ -18,10 +18,10 @@ public class CreateAndRunJobTriggerPlugin extends Plugin {
                     && request.getHeader("Content-Type").toLowerCase().contains("json")  ) {
                JsonSlurper slurp = new JsonSlurper();
                JSONObject json = (JSONObject) slurp.parse(request.getInputStream());
-               if("refs/heads/master".equalsIgnoreCase(json.getString("ref"))) {
+//               if("refs/heads/master".equalsIgnoreCase(json.getString("ref"))) {
                   String url = json.getJSONObject("repository").getString("clone_url");
                   new OnTrigger(url).run();
-               }
+//               }
                 
             } else {
                 String url = request.getParameter("url");
