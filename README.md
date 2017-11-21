@@ -17,3 +17,5 @@ Issue Tracker : https://issues.jenkins-ci.org/secure/RapidBoard.jspa?rapidView=3
 
 
 [![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins/create-and-run-job-trigger-plugin/master)](https://ci.jenkins.io/job/Plugins/job/create-and-run-job-trigger-plugin/job/master/)
+
+You can download the latest snapshot build from https://ci.jenkins.io/job/Plugins/job/create-and-run-job-trigger-plugin/job/master/lastSuccessfulBuild/artifact/target/create-and-run-job-trigger.hpi
