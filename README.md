@@ -16,3 +16,4 @@ Issue Tracker : https://issues.jenkins-ci.org/secure/RapidBoard.jspa?rapidView=3
 [Propose Patch ![](https://issues.jenkins-ci.org/secure/viewavatar?size=xsmall&avatarId=14670&avatarType=issuetype)](https://issues.jenkins-ci.org/secure/CreateIssueDetails!init.jspa?pid=10172&components=23039&issuetype=5)
 
 
+[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins/create-and-run-job-trigger-plugin/master)](https://ci.jenkins.io/job/Plugins/job/create-and-run-job-trigger-plugin/job/master/)
