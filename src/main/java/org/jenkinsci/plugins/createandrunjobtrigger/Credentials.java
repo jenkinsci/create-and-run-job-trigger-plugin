@@ -4,7 +4,6 @@ public class Credentials {
     private static final String extensionSeperator = "_";
     private static final String replacement = "-";
 
-
     public static String generateId(String service, String... extensions) {
         StringBuffer buf = new StringBuffer();
         buf.append(service.toUpperCase());
@@ -23,5 +22,4 @@ public class Credentials {
                 .replaceAll(extensionSeperator, replacement)
                 .split("/")[0];
     }
-
 }
